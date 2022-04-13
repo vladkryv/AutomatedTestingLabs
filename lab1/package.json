@@ -1,0 +1,10 @@
+{
+  "name": "lab1",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "jest --verbose"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
+}
