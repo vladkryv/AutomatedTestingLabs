@@ -1,0 +1,65 @@
+{
+  "id": "b5e8174c-0108-4f25-8ac2-05bbd351cfa2",
+  "version": "2.0",
+  "name": "lab3",
+  "url": "https://www.bing.com",
+  "tests": [{
+    "id": "cba10755-3693-4c33-9859-fc37afb8728f",
+    "name": "Untitled",
+    "commands": [{
+      "id": "96403ab3-1f82-4b83-8ca2-ab54875bd7e2",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f8cb3c67-d2a6-4c1d-9f33-ce23768284c4",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Bing",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c3fef45b-4eb8-4b1d-84b1-65fe40252517",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=bLogo",
+      "targets": [
+        ["id=bLogo", "id"],
+        ["css=#bLogo", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "3e9357f0-f426-4c18-b1e9-3d86504a5bcb",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=sb_form_q",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "40011851-c27a-441b-8c7c-9d9613ab1da1",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "id=outlook",
+      "targets": [
+        ["id=outlook", "id"],
+        ["css=#outlook", "css:finder"],
+        ["xpath=//li[@id='outlook']", "xpath:attributes"],
+        ["xpath=//li[@id='office']/div/div/ul/li", "xpath:idRelative"],
+        ["xpath=//li[6]/div/div/ul/li", "xpath:position"]
+      ],
+      "value": "3000"
+    }]
+  }],
+  "suites": [{
+    "id": "cf9ea203-68db-4b70-92a3-9bb33cdd84c1",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["cba10755-3693-4c33-9859-fc37afb8728f"]
+  }],
+  "urls": ["https://www.bing.com/"],
+  "plugins": []
+}
