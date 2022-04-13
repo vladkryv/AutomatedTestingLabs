@@ -1,0 +1,496 @@
+{
+  "id": "b8b5fbc4-2758-4b78-9a12-b48b4b077bda",
+  "version": "2.0",
+  "name": "lab5",
+  "url": "http://automationpractice.com",
+  "tests": [{
+    "id": "6558eb11-73ad-48e3-b2a7-dd46efcfb74d",
+    "name": "OpenLoginPage",
+    "commands": [{
+      "id": "587d1046-267c-4925-bb95-a1c8cfb9bf86",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "78342542-c5c8-4db8-91dd-5e981008729b",
+      "comment": "",
+      "command": "storeXpathCount",
+      "target": "xpath=//a[contains(text(),'Sign out')]",
+      "targets": [],
+      "value": "nowLogining"
+    }, {
+      "id": "cdae6e4f-bc0f-4d93-b82a-75c1d81d958c",
+      "comment": "",
+      "command": "if",
+      "target": "${nowLogining} != 0",
+      "targets": [
+        ["css=.success > td:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='content']/div[2]/div[2]/table/tbody/tr[4]/td[2]", "xpath:idRelative"],
+        ["xpath=//tr[4]/td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'${!statusOK} == true')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2caa343d-5445-40f6-8e2e-40efd02b9025",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Sign out",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d68bcfd9-f111-492e-a212-fdb1e2478a36",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ba616446-1d36-4cd6-b8bd-cf6b3e50e55f",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Sign in",
+      "targets": [
+        ["linkText=Sign in", "linkText"],
+        ["css=.login", "css:finder"],
+        ["xpath=//a[contains(text(),'Sign in')]", "xpath:link"],
+        ["xpath=//header[@id='header']/div[2]/div/div/nav/div/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://automationpractice.com/index.php?controller=my-account']", "xpath:href"],
+        ["xpath=//nav/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Sign in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "577cca8e-a505-4bac-b94e-741e016849bb",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Login - My Store",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "fc109e7a-c0e6-4cea-897e-0276d7b0aa49",
+    "name": "TryAuthorise",
+    "commands": [{
+      "id": "dded0944-eb7d-41c2-a36d-872de4df066b",
+      "comment": "",
+      "command": "open",
+      "target": "/index.php?controller=authentication&back=my-account",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "419c3a4a-cb65-4e7f-92f6-be519e0b2ab5",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//form[@id='login_form']/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/form/div/div/input", "xpath:position"]
+      ],
+      "value": "vlkr_npuedu@example.com"
+    }, {
+      "id": "b6812114-5637-4171-ae60-8b9e862f2ad0",
+      "comment": "",
+      "command": "type",
+      "target": "id=passwd",
+      "targets": [
+        ["id=passwd", "id"],
+        ["name=passwd", "name"],
+        ["css=#passwd", "css:finder"],
+        ["xpath=//input[@id='passwd']", "xpath:attributes"],
+        ["xpath=//form[@id='login_form']/div/div[2]/span/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": "j9aDdv4mhNcq6Tb"
+    }, {
+      "id": "c0d52096-2065-495d-8c6e-4560f7b19b35",
+      "comment": "",
+      "command": "click",
+      "target": "css=#SubmitLogin > span",
+      "targets": [
+        ["css=#SubmitLogin > span", "css:finder"],
+        ["xpath=//button[@id='SubmitLogin']/span", "xpath:idRelative"],
+        ["xpath=//p[2]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d78aca22-150b-43c8-9ae9-f33c4a4a4151",
+      "comment": "",
+      "command": "assertText",
+      "target": "xpath=//a/span",
+      "targets": [
+        ["css=.account > span", "css:finder"],
+        ["xpath=//header[@id='header']/div[2]/div/div/nav/div/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Vladyslav Kr')]", "xpath:innerText"]
+      ],
+      "value": "Vladyslav Kr"
+    }]
+  }, {
+    "id": "7d140bb4-7867-4b60-9331-b01ea1967a06",
+    "name": "ForCase1",
+    "commands": [{
+      "id": "fca817ef-2691-407f-aac1-efd0f02c0666",
+      "comment": "",
+      "command": "open",
+      "target": "/index.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "eb526c5b-ed3e-4948-adf3-d7629bfe6bb6",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//a[contains(text(),'Women')]",
+      "targets": [
+        ["css=.sfHover > .sf-with-ul", "css:finder"],
+        ["xpath=//a[contains(text(),'Women')]", "xpath:link"],
+        ["xpath=//div[@id='block_top_menu']/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://automationpractice.com/index.php?id_category=3&controller=category']", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ac2c065c-a6c5-4eb9-88fd-04b0d0f9e4f0",
+      "comment": "",
+      "command": "storeXpathCount",
+      "target": "xpath=//div[@class[contains(.,'product-container')]]",
+      "targets": [],
+      "value": "numberOfProducts"
+    }, {
+      "id": "924d0235-7200-41e3-8cd6-80c3d4f5a373",
+      "comment": "",
+      "command": "if",
+      "target": "${numberOfProducts} != 7",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2ab70e56-9a6e-4b7b-b74e-1f8b6de1a0db",
+      "comment": "",
+      "command": "return fail",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ede9d904-4341-4333-92d7-a367dc5bdd2d",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "da909547-a48c-47f4-9be2-afbfa87f7acf",
+      "comment": "",
+      "command": "storeXpathCount",
+      "target": "xpath=//div[@class[contains(.,'product-container')]]//ul//a[contains(@style,'background:#F1C40F')]",
+      "targets": [],
+      "value": "numberOfYellow"
+    }, {
+      "id": "4fff32d4-bda7-419f-9ba9-6752ea9bfb0d",
+      "comment": "",
+      "command": "if",
+      "target": "${numberOfYellow} != 3",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3e2b6f1f-0b79-4a0d-a4db-3cd96a3cacfd",
+      "comment": "",
+      "command": "return fail",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "aa4ddb48-b653-4a5d-940f-f6fb71662d3c",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3dad8395-119e-4e5a-bfb5-a11ef471fd70",
+      "comment": "",
+      "command": "click",
+      "target": "css=#list > a",
+      "targets": [
+        ["linkText=List", "linkText"],
+        ["css=#list > a", "css:finder"],
+        ["xpath=//a[contains(text(),'List')]", "xpath:link"],
+        ["xpath=//li[@id='list']/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[31]", "xpath:href"],
+        ["xpath=//div[3]/div/ul/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'List')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f5702294-80ec-4c5f-8ef1-645ffd58453e",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.ajax_block_product:nth-child(1) .product-name",
+      "targets": [
+        ["linkText=Faded Short Sleeve T-shirts", "linkText"],
+        ["css=.ajax_block_product:nth-child(1) .product-name", "css:finder"],
+        ["xpath=//a[contains(text(),'Faded Short Sleeve T-shirts')]", "xpath:link"],
+        ["xpath=//div[@id='center_column']/ul/li/div/div/div[2]/h5/a", "xpath:idRelative"],
+        ["xpath=(//a[@href='http://automationpractice.com/index.php?id_product=1&controller=product'])[6]", "xpath:href"],
+        ["xpath=//div[2]/h5/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Faded Short Sleeve T-shirts')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "55ab9ac5-73f8-4b99-a6f9-9e6a952ab00a",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.ajax_block_product:nth-child(1) .product-desc",
+      "targets": [
+        ["css=.ajax_block_product:nth-child(1) .product-desc", "css:finder"],
+        ["xpath=//div[@id='center_column']/ul/li/div/div/div[2]/p", "xpath:idRelative"],
+        ["xpath=//li/div/div/div[2]/p", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "5d77d6c0-d798-49d5-b394-0c8e9431fabe",
+    "name": "ForCase2",
+    "commands": [{
+      "id": "f61160f9-1c08-41ab-ae88-b0f7b421c60a",
+      "comment": "",
+      "command": "open",
+      "target": "/index.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ea8c8f1d-ae27-45ab-a56b-64d000ac53d4",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//a[contains(text(),'Women')]",
+      "targets": [
+        ["css=.sfHover > .sf-with-ul", "css:finder"],
+        ["xpath=//a[contains(text(),'Women')]", "xpath:link"],
+        ["xpath=//div[@id='block_top_menu']/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://automationpractice.com/index.php?id_category=3&controller=category']", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f7f12c2a-e17a-48d8-a4c2-e6c0d9d50919",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "linkText=Faded Short Sleeve T-shirts",
+      "targets": [
+        ["linkText=Faded Short Sleeve T-shirts", "linkText"],
+        ["css=.hovered .product-name", "css:finder"],
+        ["xpath=//a[contains(text(),'Faded Short Sleeve T-shirts')]", "xpath:link"],
+        ["xpath=//div[@id='center_column']/ul/li/div/div[2]/h5/a", "xpath:idRelative"],
+        ["xpath=(//a[@href='http://automationpractice.com/index.php?id_product=1&controller=product'])[6]", "xpath:href"],
+        ["xpath=//div[2]/h5/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Faded Short Sleeve T-shirts')]", "xpath:innerText"]
+      ],
+      "value": "5000"
+    }, {
+      "id": "66341eac-947a-4417-8609-9d281470b260",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Faded Short Sleeve T-shirts",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6edb32f5-d3cd-48e5-a068-d50c2318f162",
+      "comment": "",
+      "command": "click",
+      "target": "id=send_friend_button",
+      "targets": [
+        ["id=send_friend_button", "id"],
+        ["linkText=Send to a friend", "linkText"],
+        ["css=#send_friend_button", "css:finder"],
+        ["xpath=//a[contains(text(),'Send to a friend')]", "xpath:link"],
+        ["xpath=//a[@id='send_friend_button']", "xpath:attributes"],
+        ["xpath=//ul[@id='usefull_link_block']/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#send_friend_form')]", "xpath:href"],
+        ["xpath=//div[3]/div/div/div/div[3]/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Send to a friend')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "01b4ca7b-34d3-4c6a-ac86-038027e4b289",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=.fancybox-skin",
+      "targets": [
+        ["css=.fancybox-skin", "css:finder"],
+        ["xpath=//body[@id='product']/div[5]/div/div", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div", "xpath:position"]
+      ],
+      "value": "2000"
+    }, {
+      "id": "c0d7f208-39f3-4c8c-b1f6-8584cdba8912",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=(//div[@id='send_friend_form'])//h2[contains(text(),'Send to a friend')]",
+      "targets": [
+        ["css=#send_friend_form > .page-subheading", "css:finder"],
+        ["xpath=//div[@id='send_friend_form']/h2", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/div/div/div/h2", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b0fabdf7-753e-4535-b906-cb2589537507",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//button[@id='sendEmail']/span",
+      "targets": [
+        ["css=#sendEmail > span", "css:finder"],
+        ["xpath=//button[@id='sendEmail']/span", "xpath:idRelative"],
+        ["xpath=//div/div/div/div[2]/p/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "f40a20c3-c131-44d2-8e06-f2c7d3ee666e",
+    "name": "ForCase3",
+    "commands": [{
+      "id": "2cbd0362-1a2b-4277-9227-e006d10066f3",
+      "comment": "",
+      "command": "open",
+      "target": "/index.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a2fa2187-b3fe-4f72-a98a-a8b0d606f9e9",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//a[contains(text(),'Women')]",
+      "targets": [
+        ["css=.sfHover > .sf-with-ul", "css:finder"],
+        ["xpath=//a[contains(text(),'Women')]", "xpath:link"],
+        ["xpath=//div[@id='block_top_menu']/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://automationpractice.com/index.php?id_category=3&controller=category']", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1397c7f2-86e2-4173-9b9c-db83bda8c613",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "linkText=Faded Short Sleeve T-shirts",
+      "targets": [
+        ["linkText=Faded Short Sleeve T-shirts", "linkText"],
+        ["css=.hovered .product-name", "css:finder"],
+        ["xpath=//a[contains(text(),'Faded Short Sleeve T-shirts')]", "xpath:link"],
+        ["xpath=//div[@id='center_column']/ul/li/div/div[2]/h5/a", "xpath:idRelative"],
+        ["xpath=(//a[@href='http://automationpractice.com/index.php?id_product=1&controller=product'])[6]", "xpath:href"],
+        ["xpath=//div[2]/h5/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Faded Short Sleeve T-shirts')]", "xpath:innerText"]
+      ],
+      "value": "5000"
+    }, {
+      "id": "7ce6fcfb-247c-4134-b2e1-c2f7b80a889a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Faded Short Sleeve T-shirts",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "58746fa7-f6e6-4380-b5d3-a179316b02bd",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input[@id='quantity_wanted']",
+      "targets": [
+        ["id=quantity_wanted", "id"],
+        ["name=qty", "name"],
+        ["css=#quantity_wanted", "css:finder"],
+        ["xpath=//input[@id='quantity_wanted']", "xpath:attributes"],
+        ["xpath=//p[@id='quantity_wanted_p']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/p/input", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "ac76cd63-16c0-4cec-9e61-de0b6e474635",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//p[@id='add_to_cart']/button/span",
+      "targets": [
+        ["css=.exclusive > span", "css:finder"],
+        ["xpath=//p[@id='add_to_cart']/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/div/p/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Add to cart')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8989f908-6fa4-4242-ae7f-0b3ecc6ebddb",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "xpath=//h2[contains(.,'Product successfully added to your shopping cart')]",
+      "targets": [
+        ["css=h2:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='layer_cart']/div/div/h2", "xpath:idRelative"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Product successfully added to your shopping cart')]", "xpath:innerText"]
+      ],
+      "value": "10000"
+    }, {
+      "id": "6c1ba369-ebf4-4a92-afd1-ae89aa182d31",
+      "comment": "",
+      "command": "open",
+      "target": "/index.php?controller=order",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e871dc8e-e2c5-4a0b-9174-71acaab11940",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.cart_product img",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "df129e85-fa24-46b0-8532-229c3109c035",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//footer//section[@id='block_contact_infos']/div/ul/li[contains(.,'Email')]",
+      "targets": [
+        ["css=div > .toggle-footer > li:nth-child(3)", "css:finder"],
+        ["xpath=//section[@id='block_contact_infos']/div/ul/li[3]", "xpath:idRelative"],
+        ["xpath=//section[6]/div/ul/li[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "147c7ace-ade5-4873-9f24-d65d711ac2f6",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//footer//section[@id='block_contact_infos']/div/ul/li[contains(.,'Call')]",
+      "targets": [
+        ["css=div > .toggle-footer > li:nth-child(3)", "css:finder"],
+        ["xpath=//section[@id='block_contact_infos']/div/ul/li[3]", "xpath:idRelative"],
+        ["xpath=//section[6]/div/ul/li[3]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "4c247490-40eb-4304-aa75-2db206993f04",
+    "name": "Case1",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["6558eb11-73ad-48e3-b2a7-dd46efcfb74d", "fc109e7a-c0e6-4cea-897e-0276d7b0aa49", "7d140bb4-7867-4b60-9331-b01ea1967a06"]
+  }, {
+    "id": "67e1cdb8-57d6-4fcb-8cdb-c4e39e52611e",
+    "name": "Case2",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["6558eb11-73ad-48e3-b2a7-dd46efcfb74d", "fc109e7a-c0e6-4cea-897e-0276d7b0aa49", "5d77d6c0-d798-49d5-b394-0c8e9431fabe"]
+  }, {
+    "id": "1bc13ab4-a701-44fd-a473-bbbf3692be66",
+    "name": "Case3",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["6558eb11-73ad-48e3-b2a7-dd46efcfb74d", "fc109e7a-c0e6-4cea-897e-0276d7b0aa49", "f40a20c3-c131-44d2-8e06-f2c7d3ee666e"]
+  }],
+  "urls": ["http://automationpractice.com/"],
+  "plugins": []
+}
