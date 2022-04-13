@@ -163,7 +163,7 @@
       "id": "eb337af7-f65b-422e-aebc-574d412aa648",
       "comment": "",
       "command": "storeXpathCount",
-      "target": "xpath=//ul[contains(.,'Золоті ворота') and contains(.,'Будинок з химерами')]//../li[*]",
+      "target": "xpath=//ul[contains(.,'Золоті ворота') and contains(.,'Будинок з химерами')]//li",
       "targets": [],
       "value": "numberOfArch"
     }, {
@@ -176,7 +176,7 @@
     }, {
       "id": "ed951714-eccf-4298-a0f2-bda17e82ff5b",
       "comment": "",
-      "command": "throw",
+      "command": "return fail",
       "target": "",
       "targets": [],
       "value": ""
